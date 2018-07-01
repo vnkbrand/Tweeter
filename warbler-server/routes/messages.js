@@ -7,7 +7,7 @@ const {
   deleteMessage
 } = require("../handlers/messages");
 
-// prefix - /api/users/:id/messages
+// prefix - /api/users/:id/messages - METHOD - when there is a POST - there will be create message!
 router.route("/").post(createMessage);
 
 // prefix - /api/users/:id/messages/:message_id

@@ -8,7 +8,6 @@
   "author": "",
   "license": "ISC",
   "keywords": [],
-  "description": "",
   "dependencies": {
     "bcrypt": "^1.0.3",
     "body-parser": "^1.18.2",
@@ -20,5 +19,6 @@
   },
   "devDependencies": {
     "locus": "^2.0.1"
-  }
+  },
+  "description": ""
 }

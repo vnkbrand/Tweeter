@@ -14,25 +14,26 @@ app.use(cors());
 app.use(bodyParser.json());
 
 app.use("/api/auth", authRoutes);
+// ensure logged in & correct user before creating messages
 app.use(
   "/api/users/:id/messages",
-  loginRequired,
-  ensureCorrectUser,
+  loginRequired, 
+  ensureCorrectUser, 
   messagesRoutes
 );
 
 app.get("/api/messages", loginRequired, async function(req, res, next) {
-  try {
-    let messages = await db.Message.find()
+    try {
+      let messages = await db.Message.find()
       .sort({ createdAt: "desc" })
       .populate("user", {
         username: true,
         profileImageUrl: true
       });
-    return res.status(200).json(messages);
-  } catch (err) {
-    return next(err);
-  }
+      return res.status(200).json(messages);
+    } catch(err){
+      return next(err);
+    }
 });
 
 app.use(function(req, res, next) {

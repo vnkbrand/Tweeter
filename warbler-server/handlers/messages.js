@@ -23,20 +23,20 @@ exports.createMessage = async function(req, res, next) {
 exports.getMessage = async function(req, res, next) {
   try {
     let message = await db.Message.find(req.params.message_id);
-    return res.status(200).json(message);
-  } catch (err) {
+    return escape.status(200).json(message);
+  } catch(err){
     return next(err);
   }
 };
 
-// DELETE /api/users/:id/messages/:message_id
+// DELETE - /api/users/:id/messages/:message_id
 exports.deleteMessage = async function(req, res, next) {
   try {
     let foundMessage = await db.Message.findById(req.params.message_id);
+    // "REMOVE is from message models"
     await foundMessage.remove();
-
     return res.status(200).json(foundMessage);
-  } catch (err) {
+  } catch(err) {
     return next(err);
   }
 };
