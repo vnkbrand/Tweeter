@@ -1,0 +1,39 @@
+body {
+  background-color: #e6ecf0;
+
+}
+
+/*Nav */
+
+.navbar {
+  margin-bottom: 1rem;
+
+}
+
+.navbar a {
+  font-weight: bold;
+  color: gray;
+}
+
+.navbar a:hover {
+  color: gray;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.navbar-brand > img {
+  display: inline-block;
+  width: 50px;
+  margin-bottom: 2px;
+  margin-right: 5px;
+  border-radius: 2px;
+}
+
+ul.nav.navbar-nav li {
+  margin: 0 0.5rem;
+}
+
+.onboarding > .navbar {
+  background-image: url("./images/nav-bg.png");
+  background-size: 100% 100%;
+}
